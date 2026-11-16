@@ -1,0 +1,211 @@
+\documentclass[../main.tex]{subfiles}
+% Ce marqueur n'existe que lorsque ce fichier est compilé seul.
+\newcommand{\SubfileStandaloneFlag}{}
+
+\begin{document}
+
+% En compilation individuelle, la mention légale est affichée.
+% Dans le livre complet, elle figure déjà sur la page de garde.
+\ifdefined\SubfileStandaloneFlag
+  \PageLegaleChapitre
+\fi
+
+\chapter{Équations et inéquations du 1er degré}
+\label{chap:equations-inequations}
+
+% =====================================================
+\section{Les équations du 1er degré à une inconnue}
+% =====================================================
+
+\subsection{Définition et vocabulaire}
+
+Une \textbf{équation} est une égalité mathématique qui contient une ou plusieurs lettres appelées \textbf{inconnues} (souvent notées $x$). Résoudre une équation, c'est trouver la ou les valeurs de l'inconnue qui rendent l'égalité vraie. Cette valeur forme l'\textbf{ensemble des solutions} (noté $S$).
+
+\begin{definition}
+Une équation du 1er degré à une inconnue peut toujours se ramener à la forme générale :
+\[
+ax + b = 0 \quad (\text{avec } a \neq 0)
+\]
+\end{definition}
+
+\subsection{Principes d'équivalence (Règles d'or)}
+
+Pour résoudre une équation, on cherche à isoler l'inconnue $x$ en effectuant des opérations des deux côtés de l'égalité sans en modifier les solutions.
+
+\begin{propriete}[Règles de transformation]
+On ne change pas les solutions d'une équation si :
+\begin{enumerate}[label=\textbf{(\arabic*)}]
+  \item On \textbf{ajoute} ou on \textbf{soustrait} un même nombre (ou une même expression) aux deux membres.
+  \item On \textbf{multiplie} ou on \textbf{divise} les deux membres par un même nombre \textbf{non nul}.
+\end{enumerate}
+\end{propriete}
+
+\subsection{Méthode de résolution pas à pas}
+
+\begin{methode}
+Pour résoudre une équation type $3x - 5 = x + 7$ :
+\begin{enumerate}
+  \item \textbf{Transposer les termes en $x$ d'un côté} (souvent à gauche) et les termes constants de l'autre (en changeant leur signe lors du passage du "pont" $=$).
+  \item \textbf{Réduire} chaque membre ($3x - x = 2x$ et $7 + 5 = 12$).
+  \item \textbf{Isoler $x$} en divisant par le coefficient qui le multiplie ($2x = 12 \implies x = \frac{12}{2} = 6$).
+  \item \textbf{Conclure} avec l'ensemble des solutions : $S = \{6\}$.
+\end{enumerate}
+\end{methode}
+
+\begin{attention}
+Lorsqu'il y a des parenthèses précédées d'un signe « $-$ », n'oublie pas de \textbf{changer tous les signes} à l'intérieur lors de la suppression des parenthèses : $-(2x - 3) = -2x + 3$.
+\end{attention}
+
+% =====================================================
+\section{Les inéquations du 1er degré}
+% =====================================================
+
+\subsection{Définition}
+
+Une \textbf{inéquation} ressemble à une équation, mais au lieu d'un signe « $=$ », elle utilise l'un des quatre symboles d'inégalité : $<$ ( strictement inférieur ), $\leq$ (inférieur ou égal), $>$ (strictement supérieur) ou $\geq$ (supérieur ou égal).
+
+\begin{definition}
+Résoudre une inéquation, c'est trouver tous les nombres qui vérifient l'inégalité. La solution n'est généralement plus un nombre isolé, mais un \textbf{intervalle de nombres} (ou une demi-droite graduée).
+\end{definition}
+
+\subsection{La règle d'or des inéquations}
+
+Les principes de résolution sont les mêmes que pour les équations, à une exception fondamentale près :
+
+\begin{attention}
+Si l'on multiplie ou si l'on divise les deux membres d'une inéquation par un \textbf{nombre négatif}, il faut \textbf{impérativement inverser le sens du signe d'inégalité} ($<$ devient $>$, $\leq$ devient $\geq$, etc.).
+\end{attention}
+
+\textbf{Exemple :} 
+$-2x > 6 \quad\Longrightarrow\quad x < \frac{6}{-2} \quad\Longrightarrow\quad x < -3$. 
+(Le signe $>$ s'est transformé en $<$ car on a divisé par $-2$).
+
+% =====================================================
+\section{Récapitulatif}
+% =====================================================
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!60!black,title={\bfseries À retenir}]
+\textbf{Équations} ($=$) : 
+Passage d'un terme de l'autre côté $\rightarrow$ on change son signe ($+$ devient $-$, $\times$ devient $\div$).
+
+\textbf{Inéquations} ($<, \leq, >, \geq$) : 
+Même méthode, \textbf{mais} si division/multiplication par un nombre négatif $\rightarrow$ \textbf{on inverse le sens de l'inégalité}.
+
+\textbf{Représentation graphique} (pour les inéquations) :
+\begin{itemize}
+  \item Crochet fermé $[\ ]$ si l'inégalité est large ($\leq$ ou $\geq$).
+  \item Crochet ouvert $]\ [$ si l'inégalité est stricte ($<$ ou $>$).
+  \item La flèche indique la direction des solutions sur la droite graduée.
+\end{itemize}
+\end{tcolorbox}
+
+\newpage
+% =====================================================
+\section{Exercices}
+% =====================================================
+
+\subsection{Série A -- Résolution d'équations}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+
+\item Résous les équations suivantes dans $\mathbb{R}$ :
+\begin{enumerate}[label=\alph*)]
+  \item $4x - 5 = 19$ \qquad
+  \item $7x + 3 = 2x - 7$ \qquad
+  \item $5(x - 2) = 3x + 4$ \qquad
+  \item $3(2x - 1) - 2(x + 4) = 5$
+\end{enumerate}
+
+\item Résous les équations avec des fractions :
+\begin{enumerate}[label=\alph*)]
+  \item $\dfrac{x}{3} + \dfrac{x}{2} = 5$ \qquad
+  \item $\dfrac{2x - 1}{4} = \dfrac{x + 3}{2}$
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Série B -- Résolution d'inéquations}
+
+\begin{enumerate}[label=\textbf{\arabic*.},start=3]
+
+\item Résous les inéquations suivantes, donne l'ensemble des solutions $S$ et représente-les sur une droite graduée :
+\begin{enumerate}[label=\alph*)]
+  \item $3x + 7 \le 22$ \qquad
+  \item $5 - 2x > 11$ \qquad
+  \item $4x - 3 \ge 7x + 9$ \qquad
+  \item $2(x - 3) < 5(x + 1) - 4$
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Série C -- Problèmes de mise en équation}
+
+\begin{enumerate}[label=\textbf{\arabic*.},start=4]
+
+\item \textbf{L'âge de la troupe.} Un chef scout a trois fois l'âge de son économe. Dans 10 ans, il n'aura plus que deux fois son âge. Quel est l'âge de chacun aujourd'hui ?
+
+\item \textbf{Le parcours de rando.} Pour organiser un grand jeu en forêt, la patrouille dispose d'un budget de $50\ \text{\euro}$. La location du matériel de base coûte $20\ \text{\euro}$, et chaque kit de balisage supplémentaire coûte $4\ \text{\euro}$. 
+\begin{enumerate}[label=\alph*)]
+  \item Écris une inéquation traduisant le fait que le coût total ne doit pas dépasser le budget.
+  \item Résous cette inéquation pour trouver le nombre maximum de kits de balisage que la patrouille peut s'offrir.
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Défi bonus}
+
+Résous l'équation paramétrique suivante d'inconnue $x$ (où $m$ est un nombre réel non nul) :
+\[
+m(x - 1) = 2x + 3
+\]
+Exprime $x$ en fonction de $m$ et discute selon les valeurs de $m$.
+
+\newpage
+% =====================================================
+\section{Corrigés}
+% =====================================================
+
+\subsection*{Série A}
+
+\textbf{1.} 
+\begin{enumerate}[label=\alph*)]
+  \item $4x = 24 \implies x = 6 \quad \Rightarrow S = \{6\}$
+  \item $5x = -10 \implies x = -2 \quad \Rightarrow S = \{-2\}$
+  \item $5x - 10 = 3x + 4 \implies 2x = 14 \implies x = 7 \quad \Rightarrow S = \{7\}$
+  \item $6x - 3 - 2x - 8 = 5 \implies 4x - 11 = 5 \implies 4x = 16 \implies x = 4 \quad \Rightarrow S = \{4\}$
+\end{enumerate}
+
+\textbf{2.}
+\begin{enumerate}[label=\alph*)]
+  \item On réduit au même dénominateur ($6$) : $\dfrac{2x}{6} + \dfrac{3x}{6} = \dfrac{30}{6} \implies 5x = 30 \implies x = 6 \quad \Rightarrow S = \{6\}$
+  \item On multiplie par $4$ : $2x - 1 = 2(x + 3) \implies 2x - 1 = 2x + 6 \implies -1 = 6$ (impossible) $\quad \Rightarrow S = \emptyset$
+\end{enumerate}
+
+\subsection*{Série B}
+
+\textbf{3.}
+\begin{enumerate}[label=\alph*)]
+  \item $3x \le 15 \implies x \le 5 \quad \Rightarrow S = ]-\infty, 5]$
+  \item $-2x > 6 \implies x < -3$ (on a inversé le sens car division par $-2$) $\quad \Rightarrow S = ]-\infty, -3[$
+  \item $-3x \ge 12 \implies x \le -4$ (on a inversé le sens car division par $-3$) $\quad \Rightarrow S = ]-\infty, -4]$
+  \item $2x - 6 < 5x + 5 - 4 \implies -3x < 7 \implies x > -\dfrac{7}{3}$ (on a inversé le sens) $\quad \Rightarrow S = ]-\dfrac{7}{3}, +\infty[$
+\end{enumerate}
+
+\subsection*{Série C}
+
+\textbf{4.} Soit $x$ l'âge de l'économe aujourd'hui. Le chef a $3x$. 
+Dans 10 ans : l'économe aura $x + 10$ et le chef aura $3x + 10$.
+Équation : $3x + 10 = 2(x + 10) \implies 3x + 10 = 2x + 20 \implies x = 10$.
+\textit{Conclusion :} L'économe a $10$ ans et le chef a $30$ ans.
+
+\textbf{5.} Soit $x$ le nombre de kits de balisage.
+a) $20 + 4x \le 50$ \quad 
+b) $4x \le 30 \implies x \le 7\text{,}5$. 
+Comme on ne peut acheter qu'un nombre entier de kits, la patrouille peut s'offrir au maximum \textbf{7 kits}.
+
+\subsection*{Défi bonus}
+
+$mx - m = 2x + 3 \implies mx - 2x = m + 3 \implies x(m - 2) = m + 3$.
+Si $m \neq 2$, $x = \dfrac{m + 3}{m - 2}$. (Si $m = 2$, l'équation devient $0x = 5$, ce qui est impossible).
+
+\end{document}

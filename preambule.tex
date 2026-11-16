@@ -1,0 +1,112 @@
+% =========================================================
+% PREAMBULE COMMUN — SUPPORTS DE MATHEMATIQUES
+% =========================================================
+% Ce fichier rassemble les packages, réglages et commandes
+% partagés par le livre complet et les chapitres individuels.
+% Il est chargé depuis main.tex et hérité par les sous-fichiers.
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+
+% Mathématiques et symboles
+\usepackage{amsmath,amssymb}
+\usepackage{textcomp}
+\usepackage{eurosym}
+
+% Mise en page
+\usepackage[margin=2.3cm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+% Illustrations
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,angles,quotes}
+
+% Liens PDF (à charger après la plupart des autres packages)
+\usepackage[hidelinks]{hyperref}
+
+% Mise en forme générale
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlist[itemize]{itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{itemsep=2pt,topsep=2pt}
+
+% En-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Supports de mathématiques}
+\fancyhead[R]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\setlength{\headheight}{15pt}
+
+% Environnements pédagogiques
+\newtcolorbox{definition}{
+  breakable,
+  colback=blue!4,
+  colframe=blue!60!black,
+  fonttitle=\bfseries,
+  title={Définition}
+}
+
+\newtcolorbox{propriete}[1][Propriétés]{
+  breakable,
+  colback=green!5!white,
+  colframe=green!45!black,
+  fonttitle=\bfseries,
+  title={#1}
+}
+
+\newtcolorbox{attention}{
+  breakable,
+  colback=red!4,
+  colframe=red!60!black,
+  fonttitle=\bfseries,
+  title={Attention}
+}
+
+\newtcolorbox{methode}{
+  breakable,
+  colback=orange!6,
+  colframe=orange!70!black,
+  fonttitle=\bfseries,
+  title={Méthode}
+}
+
+% Virgule décimale (commande déjà utilisée dans certains supports)
+\newcommand{\dec}{{,}}
+
+% Mention légale : appelée dans le livre ou dans chaque chapitre autonome.
+\newcommand{\MentionLegale}{%
+  \begin{tcolorbox}[
+    breakable,
+    colback=gray!5,
+    colframe=gray!55!black,
+    title={Propriété intellectuelle},
+    fonttitle=\bfseries
+  ]
+  Ce document est rédigé et mis à disposition exclusivement pour les élèves
+  inscrits aux cours de Gauthier Baudelet. Toute reproduction, mise en ligne
+  (Google Drive partagé, réseaux sociaux, plateformes publiques) ou transmission
+  à des tiers, même à titre gratuit, est strictement interdite.
+  \end{tcolorbox}%
+}
+
+% Page de mention légale pour un chapitre compilé individuellement.
+\newcommand{\PageLegaleChapitre}{%
+  \begin{titlepage}
+    \vspace*{\fill}
+    \MentionLegale
+    \vspace*{\fill}
+  \end{titlepage}
+}
+
+% À utiliser dans chaque fichier de chapitre avec subfiles :
+% cette condition affiche la mention légale uniquement lorsque
+% le chapitre est compilé seul, et pas lorsqu'il est inclus dans main.tex.

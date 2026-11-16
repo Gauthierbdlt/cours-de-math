@@ -1,0 +1,467 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\ifSubfilesClassLoaded{\PageLegaleChapitre}{}
+
+\chapter{Exposants et racines carrées}
+\label{chap:exposants-et-racines}
+
+% =====================================================
+\section{Les exposants (puissances)}
+% =====================================================
+
+\subsection{Définition}
+
+\begin{definition}
+Soit $a$ un nombre réel et $n$ un entier strictement positif.
+\[
+a^n = \underbrace{a \times a \times \cdots \times a}_{n \text{ facteurs}}
+\]
+Dans $a^n$, $a$ est la \textbf{base} et $n$ est l'\textbf{exposant}.
+
+Par convention, pour $a \neq 0$ :
+\[
+a^1 = a, \qquad a^0 = 1, \qquad a^{-n} = \frac{1}{a^n}.
+\]
+\end{definition}
+
+\textbf{Exemples.}
+\[
+2^5 = 2\times2\times2\times2\times2 = 32, \qquad
+10^4 = 10\,000, \qquad
+5^0 = 1, \qquad
+2^{-3} = \frac{1}{2^3} = \frac{1}{8}.
+\]
+
+\textbf{Pourquoi ces conventions ?} Elles sont imposées par la règle du quotient (voir plus bas) :
+\[
+\frac{2^3}{2^3} = \frac{8}{8} = 1 \quad\text{et}\quad \frac{2^3}{2^3} = 2^{3-3} = 2^0
+\quad\Rightarrow\quad 2^0 = 1,
+\]
+\[
+\frac{2^2}{2^5} = \frac{4}{32} = \frac{1}{8} \quad\text{et}\quad \frac{2^2}{2^5} = 2^{2-5} = 2^{-3}
+\quad\Rightarrow\quad 2^{-3} = \frac{1}{2^3}.
+\]
+
+\subsection{Propriétés}
+
+Pour $a, b$ réels non nuls et $m, n$ entiers :
+
+\begin{propriete}[Règles de calcul]
+\begin{enumerate}[label=\textbf{(P\arabic*)}]
+  \item \textbf{Produit de même base :} $a^m \times a^n = a^{m+n}$
+  \item \textbf{Quotient de même base :} $\dfrac{a^m}{a^n} = a^{m-n}$
+  \item \textbf{Puissance d'une puissance :} $(a^m)^n = a^{m \times n}$
+  \item \textbf{Puissance d'un produit :} $(a \times b)^n = a^n \times b^n$
+  \item \textbf{Puissance d'un quotient :} $\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}$
+\end{enumerate}
+\end{propriete}
+
+\textbf{Exemples.}
+\begin{itemize}
+  \item $2^3 \times 2^4 = 2^{3+4} = 2^7 = 128$
+        \quad (en effet : $(2\times2\times2)\times(2\times2\times2\times2)$ comporte 7 facteurs $2$)
+  \item $\dfrac{5^6}{5^2} = 5^{6-2} = 5^4 = 625$
+  \item $(3^2)^3 = 3^{2\times3} = 3^6 = 729$
+  \item $(2\times5)^3 = 2^3 \times 5^3 = 8 \times 125 = 1\,000$
+  \item $\left(\dfrac{2}{3}\right)^3 = \dfrac{2^3}{3^3} = \dfrac{8}{27}$
+  \item $x^5 \times x^{-2} = x^{5+(-2)} = x^3$
+\end{itemize}
+
+\subsection{Le signe d'une puissance}
+
+\begin{propriete}[Signe]
+\begin{itemize}
+  \item Si l'exposant est \textbf{pair}, la puissance d'un nombre négatif est \textbf{positive} : $(-2)^4 = 16$.
+  \item Si l'exposant est \textbf{impair}, elle est \textbf{négative} : $(-2)^3 = -8$.
+\end{itemize}
+\end{propriete}
+
+\begin{attention}
+Les parenthèses déterminent la base :
+\[
+(-3)^2 = (-3)\times(-3) = 9 \qquad\text{mais}\qquad -3^2 = -(3\times 3) = -9.
+\]
+\end{attention}
+
+\subsection{Erreurs fréquentes}
+
+\begin{attention}
+\begin{itemize}
+  \item $2^3 \neq 2 \times 3$ : on a $2^3 = 8$ et non $6$.
+  \item Les règles (P1) et (P2) exigent \textbf{la même base}. Par exemple, $2^3 \times 3^2$ ne se simplifie pas en une seule puissance : $2^3\times 3^2 = 8 \times 9 = 72$.
+  \item Il n'existe pas de règle pour une \textbf{somme} : $2^3 + 2^4 = 8 + 16 = 24$, et \textbf{pas} $2^7$.
+  \item $(a+b)^2 \neq a^2 + b^2$. Contre-exemple : $(3+4)^2 = 49$ alors que $3^2 + 4^2 = 25$.
+  \item L'exposant ne porte que sur ce qui est juste devant : $3 \times 2^2 = 12$, alors que $(3\times2)^2 = 36$.
+\end{itemize}
+\end{attention}
+
+\subsection{Puissances de 10 et notation scientifique}
+
+\[
+10^3 = 1\,000, \qquad 10^2 = 100, \qquad 10^0 = 1, \qquad 10^{-1} = 0\dec 1, \qquad 10^{-3} = 0\dec 001.
+\]
+
+\begin{definition}
+Un nombre est en \textbf{notation scientifique} s'il est écrit sous la forme
+\[
+a \times 10^n \qquad\text{avec } 1 \leq a < 10 \text{ et } n \in \mathbb{Z}.
+\]
+\end{definition}
+
+\textbf{Exemples.}
+\[
+45\,000 = 4\dec 5 \times 10^4, \qquad 0\dec 0072 = 7\dec 2 \times 10^{-3}.
+\]
+
+% =====================================================
+\section{Les racines carrées}
+% =====================================================
+
+\subsection{Définition}
+
+\begin{definition}
+Soit $a \geq 0$. La \textbf{racine carrée} de $a$, notée $\sqrt{a}$, est l'unique nombre \textbf{positif ou nul} dont le carré vaut $a$ :
+\[
+\sqrt{a} \geq 0 \quad\text{et}\quad \left(\sqrt{a}\right)^2 = a.
+\]
+\end{definition}
+
+\textbf{Exemples.}
+\[
+\sqrt{49} = 7 \text{ car } 7^2 = 49, \qquad \sqrt{0} = 0, \qquad \sqrt{\tfrac{4}{9}} = \tfrac{2}{3}, \qquad \sqrt{0\dec 25} = 0\dec 5.
+\]
+
+\textbf{Remarques.}
+\begin{itemize}
+  \item $(-7)^2 = 49$ également, mais $\sqrt{49} = 7$ seulement : une racine carrée n'est jamais négative.
+  \item On ne peut pas calculer la racine carrée d'un nombre négatif (dans $\mathbb{R}$).
+  \item Si $a \geq 0$ : $\sqrt{a^2} = a$. Pour tout réel $x$ : $\sqrt{x^2} = |x|$.
+\end{itemize}
+
+\textbf{Carrés parfaits à connaître :}
+\[
+\begin{array}{llllllll}
+1^2 = 1 & 2^2 = 4 & 3^2 = 9 & 4^2 = 16 & 5^2 = 25 & 6^2 = 36 & 7^2 = 49 & 8^2 = 64 \\
+9^2 = 81 & 10^2 = 100 & 11^2 = 121 & 12^2 = 144 & 13^2 = 169 & 14^2 = 196 & 15^2 = 225 &
+\end{array}
+\]
+
+\subsection{Propriétés}
+
+Pour $a, b \geq 0$ :
+
+\begin{propriete}[Règles de calcul]
+\begin{enumerate}[label=\textbf{(R\arabic*)}]
+  \item $\left(\sqrt{a}\right)^2 = a$
+  \item $\sqrt{a \times b} = \sqrt{a} \times \sqrt{b}$
+  \item $\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}$ \quad (avec $b > 0$)
+\end{enumerate}
+\end{propriete}
+
+\textbf{Exemples.}
+\[
+\sqrt{9 \times 16} = \sqrt{144} = 12 = 3 \times 4 = \sqrt{9}\times\sqrt{16}, \qquad
+\sqrt{\frac{25}{4}} = \frac{5}{2}, \qquad
+\left(\sqrt{7}\right)^2 = 7.
+\]
+
+\begin{attention}
+En général, $\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$ (et de même pour la soustraction).
+\[
+\sqrt{9+16} = \sqrt{25} = 5 \qquad\text{mais}\qquad \sqrt{9}+\sqrt{16} = 3+4 = 7.
+\]
+\end{attention}
+
+\subsection{Simplifier une racine carrée}
+
+\begin{methode}
+\begin{enumerate}
+  \item Chercher le \textbf{plus grand carré parfait} qui divise le nombre sous la racine.
+  \item Écrire le nombre comme produit de ce carré parfait et d'un reste, puis appliquer (R2).
+  \item Calculer la racine du carré parfait.
+\end{enumerate}
+\end{methode}
+
+\textbf{Exemples.}
+\[
+\sqrt{72} = \sqrt{36 \times 2} = \sqrt{36}\times\sqrt{2} = 6\sqrt{2}, \qquad
+\sqrt{50} = \sqrt{25\times 2} = 5\sqrt{2}, \qquad
+\sqrt{12} = \sqrt{4 \times 3} = 2\sqrt{3}.
+\]
+(Ici, $6\sqrt{2}$ signifie $6 \times \sqrt{2}$.)
+
+\subsection{Additionner et multiplier des racines}
+
+On ne peut additionner (ou soustraire) que des racines \textbf{identiques}, exactement comme on regroupe des termes semblables ($3x + 5x = 8x$) :
+\[
+3\sqrt{2} + 5\sqrt{2} = 8\sqrt{2}, \qquad 7\sqrt{2} - 3\sqrt{2} = 4\sqrt{2}.
+\]
+L'expression $\sqrt{2}+\sqrt{3}$ ne se simplifie pas. Parfois, il faut d'abord simplifier chaque racine :
+\[
+\sqrt{8} + \sqrt{18} = 2\sqrt{2} + 3\sqrt{2} = 5\sqrt{2}.
+\]
+Pour \textbf{multiplier}, on multiplie les coefficients entre eux et les racines entre elles :
+\[
+2\sqrt{3} \times 3\sqrt{3} = (2\times3)\times(\sqrt{3}\times\sqrt{3}) = 6 \times 3 = 18.
+\]
+
+\subsection{Encadrer une racine carrée}
+
+Pour situer $\sqrt{20}$ : comme $4^2 = 16 < 20 < 25 = 5^2$, on a $4 < \sqrt{20} < 5$ (la calculatrice donne $\sqrt{20} \approx 4\dec 47$).
+
+\subsection{Lien avec le théorème de Pythagore}
+
+Dans un triangle rectangle de côtés de l'angle droit $a$ et $b$ et d'hypoténuse $c$ :
+\[
+a^2 + b^2 = c^2 \quad\Longleftrightarrow\quad c = \sqrt{a^2 + b^2}.
+\]
+Exemple : $a = 3$ et $b = 4$ donnent $c = \sqrt{9+16} = \sqrt{25} = 5$.
+
+% =====================================================
+\section{Récapitulatif}
+% =====================================================
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!60!black,title={\bfseries À retenir}]
+\textbf{Exposants} (bases identiques, non nulles)
+\[
+a^m a^n = a^{m+n}, \quad \frac{a^m}{a^n} = a^{m-n}, \quad (a^m)^n = a^{mn}, \quad (ab)^n = a^n b^n, \quad a^0 = 1, \quad a^{-n} = \frac{1}{a^n}.
+\]
+\textbf{Racines carrées} ($a, b \geq 0$)
+\[
+\sqrt{a} \geq 0, \quad \left(\sqrt{a}\right)^2 = a, \quad \sqrt{ab} = \sqrt{a}\sqrt{b}, \quad \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}, \quad \sqrt{a+b} \neq \sqrt{a}+\sqrt{b}.
+\]
+\textbf{Réflexes :} vérifier que les bases sont identiques~; ne jamais « simplifier » une somme avec les règles du produit~; pour simplifier une racine, chercher le plus grand carré parfait.
+\end{tcolorbox}
+
+\newpage
+% =====================================================
+\section{Exercices}
+% =====================================================
+
+\subsection{Série A -- Briefing au sol : les exposants}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+
+\item Avant le décollage, simplifie les calculs de la check-list. Écris sous la forme d'une seule puissance :
+\begin{enumerate}[label=\alph*)]
+  \item $3^2 \times 3^4$ \qquad
+  \item $\dfrac{5^7}{5^3}$ \qquad
+  \item $(2^3)^2$ \qquad
+  \item $7\times7\times7\times7\times7$ \qquad
+  \item $\dfrac{10^2 \times 10^5}{10^3}$
+\end{enumerate}
+
+\item Calcule :
+\begin{enumerate}[label=\alph*)]
+  \item $2^5$ \qquad
+  \item $(-2)^3$ \qquad
+  \item $-2^4$ \qquad
+  \item $(-2)^4$ \qquad
+  \item $10^4$ \qquad
+  \item $5^0$ \qquad
+  \item $2^{-3}$ \qquad
+  \item $10^{-2}$
+\end{enumerate}
+
+\item Simplifie ces expressions du carnet de bord ($x \neq 0$) :
+\begin{enumerate}[label=\alph*)]
+  \item $x^3 \times x^5$ \qquad
+  \item $\dfrac{x^9}{x^4}$ \qquad
+  \item $(x^2)^4$ \qquad
+  \item $(2x)^3$ \qquad
+  \item $(3x^2)^2$ \qquad
+  \item $x^5 \times x^{-2}$
+\end{enumerate}
+
+\item \textbf{Données de vol.} Écris en notation scientifique :
+\begin{enumerate}[label=\alph*)]
+  \item l'altitude de croisière : $11\,000$ m \qquad
+  \item la vitesse de croisière : $900$ km/h \qquad
+  \item la distance Bruxelles--New York : $5\,900$ km \qquad
+  \item l'épaisseur d'un hublot : $0\dec 00045$ km
+\end{enumerate}
+Écris ensuite sous forme décimale :
+\begin{enumerate}[label=\alph*),resume*]
+  \item la vitesse du son : $3\dec 4 \times 10^2$ m/s \qquad
+  \item l'altitude d'un ballon-sonde : $2\dec 5 \times 10^4$ m
+\end{enumerate}
+
+\item \textbf{Vrai ou faux ?} Corrige les affirmations fausses.
+\begin{enumerate}[label=\alph*)]
+  \item $2^3 \times 2^2 = 2^6$ \qquad
+  \item $(3^2)^3 = 3^5$ \qquad
+  \item $2^3 + 2^3 = 2^6$ \qquad
+  \item $(a+b)^2 = a^2 + b^2$ \qquad
+  \item $4^0 = 0$ \qquad
+  \item $(-5)^2 = -25$ \qquad
+  \item $10^3 \times 10^{-3} = 1$
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Série B -- Carnet de campagne : les racines carrées}
+
+\begin{enumerate}[label=\textbf{\arabic*.},start=6]
+
+\item Calcule sans calculatrice :
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{16}$ \qquad
+  \item $\sqrt{81}$ \qquad
+  \item $\sqrt{121}$ \qquad
+  \item $\sqrt{400}$ \qquad
+  \item $\sqrt{0\dec 25}$ \qquad
+  \item $\sqrt{\dfrac{4}{9}}$
+\end{enumerate}
+
+\item Un éclaireur repère son chemin : entre quels deux entiers consécutifs se trouve chaque racine ?
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{7}$ \qquad
+  \item $\sqrt{30}$ \qquad
+  \item $\sqrt{80}$ \qquad
+  \item $\sqrt{150}$
+\end{enumerate}
+
+\item Simplifie :
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{12}$ \qquad
+  \item $\sqrt{50}$ \qquad
+  \item $\sqrt{48}$ \qquad
+  \item $\sqrt{98}$ \qquad
+  \item $\sqrt{180}$
+\end{enumerate}
+
+\item Calcule et simplifie :
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{3}\times\sqrt{12}$ \qquad
+  \item $4\sqrt{5} + 2\sqrt{5}$ \qquad
+  \item $7\sqrt{2} - 3\sqrt{2}$ \qquad
+  \item $\left(\sqrt{7}\right)^2$
+  \item $3\sqrt{2} \times 2\sqrt{2}$ \qquad
+  \item $\sqrt{50} - \sqrt{8}$ \qquad
+  \item $\sqrt{27} + \sqrt{12}$
+\end{enumerate}
+
+\item \textbf{Vrai ou faux ?} Corrige les affirmations fausses.
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{9+16} = \sqrt{9}+\sqrt{16}$ \qquad
+  \item $\sqrt{9\times16} = \sqrt{9}\times\sqrt{16}$ \qquad
+  \item $\sqrt{25} = \pm 5$ \qquad
+  \item $2\sqrt{3} = \sqrt{6}$
+\end{enumerate}
+
+\end{enumerate}
+
+\subsection{Série C -- Missions de vol et de camp}
+
+\textbf{Mission 1 -- L'horizon du pilote.}
+À l'altitude $h$ (en mètres), la distance à l'horizon est approximativement
+\[
+d \approx 3\dec 57 \times \sqrt{h} \qquad (d \text{ en km}).
+\]
+\begin{enumerate}[label=\alph*)]
+  \item Calcule $d$ pour $h = 100$ m, puis $h = 2\,500$ m, puis $h = 10\,000$ m.
+  \item Quand l'altitude est multipliée par $100$, par combien la distance à l'horizon est-elle multipliée ? Explique pourquoi.
+\end{enumerate}
+
+\textbf{Mission 2 -- Plan de vol.}
+Un avion vole $120$ km vers le nord, puis $160$ km vers l'est. Quelle est la distance en ligne droite entre son point de départ et son point d'arrivée ?
+
+\textbf{Mission 3 -- Hike en patrouille.}
+Un éclaireur marche $5$ km vers l'ouest, puis $5$ km vers le sud. À quelle distance se trouve-t-il de son point de départ ? Donne la valeur exacte simplifiée, puis une valeur approchée au centième.
+
+\textbf{Mission 4 -- Chaîne d'alerte.}
+À chaque ronde, chaque personne prévenue en prévient $2$ nouvelles : à la ronde $n$, il y a donc $2^n$ nouvelles personnes prévenues.
+\begin{enumerate}[label=\alph*)]
+  \item Combien de personnes sont prévenues lors de la 5\textsuperscript{e} ronde ?
+  \item À partir de quelle ronde dépasse-t-on $1\,000$ personnes prévenues en une seule ronde ?
+\end{enumerate}
+
+\textbf{Mission 5 -- Terrain de camp.}
+La troupe dispose d'un terrain carré de $625\ \text{m}^2$. Quelle est la longueur de son côté ? Quelle longueur de corde faut-il pour en faire le tour ?
+
+\subsection{Défi bonus}
+
+\begin{enumerate}[label=\alph*)]
+  \item $\dfrac{2^3 \times 2^5}{(2^2)^3}$ \qquad
+  \item $\sqrt{2^6}$ \qquad
+  \item $\sqrt{3^2 \times 5^2}$ \qquad
+  \item $\sqrt{10^4}$
+\end{enumerate}
+
+\newpage
+% =====================================================
+\section{Corrigés}
+% =====================================================
+
+\subsection*{Série A}
+
+\textbf{1.} a) $3^6$ \quad b) $5^4$ \quad c) $2^6$ \quad d) $7^5$ \quad e) $10^4$ (car $10^7 / 10^3$)
+
+\textbf{2.} a) $32$ \quad b) $-8$ \quad c) $-16$ \quad d) $16$ \quad e) $10\,000$ \quad f) $1$ \quad g) $\frac{1}{8}$ \quad h) $\frac{1}{100} = 0\dec 01$
+
+\textbf{3.} a) $x^8$ \quad b) $x^5$ \quad c) $x^8$ \quad d) $8x^3$ \quad e) $9x^4$ \quad f) $x^3$
+
+\textbf{4.} a) $1\dec 1 \times 10^4$ m \quad b) $9 \times 10^2$ km/h \quad c) $5\dec 9 \times 10^3$ km \quad d) $4\dec 5 \times 10^{-4}$ km \quad e) $340$ m/s \quad f) $25\,000$ m
+
+\textbf{5.}
+\begin{enumerate}[label=\alph*)]
+  \item Faux : $2^3 \times 2^2 = 2^5$.
+  \item Faux : $(3^2)^3 = 3^6$.
+  \item Faux : $2^3 + 2^3 = 8 + 8 = 16 = 2^4$ (les exposants ne s'additionnent pas dans une somme).
+  \item Faux : $(a+b)^2 = a^2 + 2ab + b^2$. Contre-exemple : $(3+4)^2 = 49 \neq 25$.
+  \item Faux : $4^0 = 1$.
+  \item Faux : $(-5)^2 = 25$.
+  \item Vrai : $10^3 \times 10^{-3} = 10^0 = 1$.
+\end{enumerate}
+
+\subsection*{Série B}
+
+\textbf{6.} a) $4$ \quad b) $9$ \quad c) $11$ \quad d) $20$ \quad e) $0\dec 5$ \quad f) $\frac{2}{3}$
+
+\textbf{7.} a) $2 < \sqrt{7} < 3$ \quad b) $5 < \sqrt{30} < 6$ \quad c) $8 < \sqrt{80} < 9$ \quad d) $12 < \sqrt{150} < 13$
+
+\textbf{8.} a) $2\sqrt{3}$ \quad b) $5\sqrt{2}$ \quad c) $4\sqrt{3}$ \quad d) $7\sqrt{2}$ \quad e) $6\sqrt{5}$
+
+\textbf{9.}
+\begin{enumerate}[label=\alph*)]
+  \item $\sqrt{36} = 6$
+  \item $6\sqrt{5}$
+  \item $4\sqrt{2}$
+  \item $7$
+  \item $3 \times 2 \times (\sqrt{2}\times\sqrt{2}) = 6 \times 2 = 12$
+  \item $5\sqrt{2} - 2\sqrt{2} = 3\sqrt{2}$
+  \item $3\sqrt{3} + 2\sqrt{3} = 5\sqrt{3}$
+\end{enumerate}
+
+\textbf{10.}
+\begin{enumerate}[label=\alph*)]
+  \item Faux : $\sqrt{25} = 5$ alors que $\sqrt{9}+\sqrt{16} = 7$.
+  \item Vrai : les deux membres valent $12$.
+  \item Faux : $\sqrt{25} = 5$ (une racine carrée est positive).
+  \item Faux : $2\sqrt{3} = \sqrt{4}\times\sqrt{3} = \sqrt{12}$.
+\end{enumerate}
+
+\subsection*{Série C}
+
+\textbf{Mission 1.}
+\begin{enumerate}[label=\alph*)]
+  \item $h = 100$ m : $d \approx 3\dec 57 \times 10 = 35\dec 7$ km. \\
+        $h = 2\,500$ m : $\sqrt{2\,500} = 50$, donc $d \approx 178\dec 5$ km. \\
+        $h = 10\,000$ m : $\sqrt{10\,000} = 100$, donc $d \approx 357$ km.
+  \item La distance n'est multipliée que par $10$ (de $35\dec 7$ à $357$ km), car $\sqrt{100 \times h} = \sqrt{100}\times\sqrt{h} = 10\sqrt{h}$.
+\end{enumerate}
+
+\textbf{Mission 2.} $d = \sqrt{120^2 + 160^2} = \sqrt{14\,400 + 25\,600} = \sqrt{40\,000} = 200$ km.
+
+\textbf{Mission 3.} $d = \sqrt{5^2 + 5^2} = \sqrt{50} = 5\sqrt{2}$ km $\approx 7\dec 07$ km.
+
+\textbf{Mission 4.} a) $2^5 = 32$ personnes. \quad b) $2^9 = 512 < 1\,000 < 1\,024 = 2^{10}$, donc dès la 10\textsuperscript{e} ronde.
+
+\textbf{Mission 5.} Côté : $\sqrt{625} = 25$ m. Tour complet : $4 \times 25 = 100$ m de corde.
+
+\subsection*{Défi bonus}
+
+a) $\dfrac{2^8}{2^6} = 2^2 = 4$ \quad b) $\sqrt{2^6} = 2^3 = 8$ (car $(2^3)^2 = 2^6$) \quad c) $3 \times 5 = 15$ \quad d) $\sqrt{10^4} = 10^2 = 100$
+
+\end{document}

@@ -1,0 +1,266 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+% En compilation individuelle, la mention légale est affichée.
+% Dans le livre complet, elle figure déjà sur la page de garde.
+\ifSubfilesClassLoaded{\PageLegaleChapitre}{}
+
+\chapter{Le théorème de Thalès et applications}
+\label{chap:thales-geometrie-metrique}
+
+\begin{center}
+  \large Synthèse de cours et exercices (3e secondaire)
+\end{center}
+
+% =====================================================
+\section{Introduction et configuration de Thalès}
+% =====================================================
+
+Après avoir exploré le triangle rectangle (Pythagore et la trigonométrie), nous passons à l'étude des proportions dans les figures géométriques grâce au théorème de Thalès. Ce théorème permet de lier des longueurs dans des figures formées par des droites sécantes coupées par des droites parallèles.
+
+\subsection{Les deux configurations classiques}
+
+Le théorème s'applique dans deux configurations principales : le « triangle » (ou configuration classique) et le « papillon » (ou configuration croisée).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % Configuration 1 : triangle
+  \begin{scope}
+    \coordinate (A) at (0,3);
+    \coordinate (B) at (-2,0);
+    \coordinate (C) at (2,0);
+    \coordinate (D) at (-1,1.5);
+    \coordinate (E) at (1,1.5);
+
+    \draw[thick, blue!60!black] (B) -- (A) -- (C) -- cycle;
+    \draw[thick, red!60!black] (D) -- (E);
+
+    \node[above] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    \node[left] at (D) {$D$};
+    \node[right] at (E) {$E$};
+
+    \node at (0,-0.6) {\textbf{Configuration « Triangle »}};
+    \node at (0,-1.1) {\small $(DE) \parallel (BC)$};
+  \end{scope}
+
+  % Configuration 2 : papillon
+  \begin{scope}[shift={(6,0)}]
+    \coordinate (O) at (0,1.5);
+    \coordinate (A) at (-1.5,2.6);
+    \coordinate (B) at (-1.5,0.4);
+    \coordinate (C) at (1.5,0.4);
+    \coordinate (D) at (1.5,2.6);
+
+    \draw[thick, blue!60!black] (A) -- (C);
+    \draw[thick, blue!60!black] (B) -- (D);
+    \draw[thick, red!60!black] (A) -- (B);
+    \draw[thick, red!60!black] (C) -- (D);
+
+    \node[above left] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    \node[above right] at (D) {$D$};
+    \node[below right] at (O) {$O$};
+
+    \node at (0,-0.6) {\textbf{Configuration « Papillon »}};
+    \node at (0,-1.1) {\small $(AB) \parallel (CD)$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+% =====================================================
+\section{Énoncé du théorème de Thalès}
+% =====================================================
+
+\begin{propriete}[Théorème de Thalès]
+Soit un triangle $ABC$. Si une droite parallèle à l'un des côtés (par exemple $(DE)$ parallèle à $(BC)$) coupe les deux autres côtés en $D$ et $E$, alors elle détermine un triangle $ADE$ dont les longueurs des côtés sont proportionnelles à celles du triangle $ABC$.
+\[
+\frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}
+\]
+\end{propriete}
+
+\begin{attention}
+Pour bien poser les rapports de Thalès, partez toujours du sommet commun (le sommet $A$ d'où partent les deux sécantes) et suivez l'ordre des segments :
+\[
+\frac{\text{Petit côté}}{\text{Grand côté}} =
+\frac{\text{Petit côté}}{\text{Grand côté}} =
+\frac{\text{Petite parallèle}}{\text{Grande parallèle}}
+\]
+\end{attention}
+
+% =====================================================
+\section{Méthode de résolution}
+% =====================================================
+
+\begin{methode}
+Pour calculer une longueur manquante grâce à Thalès :
+\begin{enumerate}
+  \item Vérifier que les droites sont bien parallèles (mentionné dans l'énoncé ou déduit).
+  \item Écrire l'égalité des trois rapports en partant du sommet d'intersection des sécantes.
+  \item Remplacer les lettres par les valeurs numériques connues.
+  \item Utiliser un \textbf{produit en croix} pour isoler et calculer l'inconnue $x$.
+\end{enumerate}
+\end{methode}
+
+\textbf{Exemple d'application :}
+Dans un triangle $ABC$, on sait que $(DE) \parallel (BC)$. On donne $AD = 3\text{ cm}$, $DB = 2\text{ cm}$ (donc $AB = 3 + 2 = 5\text{ cm}$), $AE = 4\text{ cm}$, et l'on cherche $AC$.
+\[
+\frac{AD}{AB} = \frac{AE}{AC}
+\quad\Longrightarrow\quad
+\frac{3}{5} = \frac{4}{AC}
+\]
+En effectuant le produit en croix :
+\[
+3 \times AC = 5 \times 4
+\quad\Longrightarrow\quad
+3 \times AC = 20
+\quad\Longrightarrow\quad
+AC = \frac{20}{3} \approx 6{,}67\text{ cm}.
+\]
+
+% =====================================================
+\section{Réciproque du théorème de Thalès}
+% =====================================================
+
+La réciproque sert à prouver que deux droites sont parallèles.
+
+\begin{propriete}[Réciproque]
+Si, sur deux droites sécantes en $A$, les points $D, B$ et $E, C$ sont disposés dans le même ordre et que les rapports $\dfrac{AD}{AB}$ et $\dfrac{AE}{AC}$ sont égaux, alors les droites $(DE)$ et $(BC)$ sont parallèles.
+\end{propriete}
+
+% =====================================================
+\section{Récapitulatif}
+% =====================================================
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!60!black,title={\bfseries À retenir}]
+\begin{itemize}
+  \item \textbf{Théorème direct :} Sert à \textbf{calculer des longueurs} (grâce au parallélisme).
+  \item \textbf{Réciproque :} Sert à \textbf{démontrer un parallélisme} (grâce à l'égalité des rapports).
+  \item \textbf{Piège classique :} Ne pas oublier d'additionner les segments pour obtenir le grand côté entier ($AB = AD + DB$).
+\end{itemize}
+\end{tcolorbox}
+
+\newpage
+% =====================================================
+\section{Exercices}
+% =====================================================
+
+\subsection{Série A -- Calculs de longueurs directs}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item Soit un triangle $ABC$ tel que $(DE) \parallel (BC)$ avec $D$ sur $[AB]$ et $E$ sur $[AC]$.
+On donne : $AD = 4\text{ cm}$, $AB = 10\text{ cm}$, $AE = 6\text{ cm}$ et $BC = 15\text{ cm}$.
+\begin{enumerate}[label=\alph*)]
+  \item Calcule la longueur $AC$.
+  \item Calcule la longueur $DE$.
+\end{enumerate}
+
+\item Dans une configuration de Thalès, on a $AM = 5\text{ cm}$, $AB = 8\text{ cm}$ et $AN = 3\text{ cm}$. Sachant que $(MN) \parallel (BC)$, calcule la longueur $NC$ (attention à bien calculer d'abord $AC$).
+\end{enumerate}
+
+\subsection{Série B -- Configuration papillon et démonstrations}
+
+\begin{enumerate}[label=\textbf{\arabic*.},start=3]
+\item Dans une figure en forme de papillon de centre $O$, les droites $(AB)$ et $(CD)$ sont parallèles.
+On sait que $OA = 3\text{ cm}$, $OB = 4\text{ cm}$, $OD = 6\text{ cm}$ et $CD = 7\text{ cm}$.
+\begin{enumerate}[label=\alph*)]
+  \item Écris l'égalité des rapports de Thalès pour cette configuration.
+  \item Calcule la longueur $OC$, puis la longueur $AB$.
+\end{enumerate}
+
+\item \textbf{Sont-elles parallèles ?} Sur un segment $[AB]$, on place un point $M$ tel que $AM = 3\text{ cm}$ et $AB = 7\text{ cm}$. Sur une autre sécante issue de $A$, on place $N$ tel que $AN = 4\text{ cm}$ et $AC = \frac{28}{3}\text{ cm}$. Les droites $(MN)$ et $(BC)$ sont-elles parallèles ? Justifie par le calcul.
+\end{enumerate}
+
+\subsection{Défi bonus}
+
+Un géomètre souhaite mesurer la hauteur d'un arbre gigantesque sans y grimper. Il plante un bâton vertical de $1{,}50\text{ m}$ à $8\text{ mètres}$ du pied de l'arbre. L'ombre du bâton mesurée au sol est de $2\text{ mètres}$.
+Sachant que les rayons du soleil sont parallèles, quelle est la hauteur totale de l'arbre ?
+
+\newpage
+% =====================================================
+\section{Corrigés}
+% =====================================================
+
+\subsection*{Série A}
+
+\textbf{1.} a) On écrit les rapports :
+\[
+\frac{AD}{AB} = \frac{AE}{AC}
+\implies \frac{4}{10} = \frac{6}{AC}.
+\]
+Produit en croix :
+\[
+4 \times AC = 60 \implies AC = \frac{60}{4} = 15\text{ cm}.
+\]
+b) Pour le calcul de $DE$ :
+\[
+\frac{AD}{AB} = \frac{DE}{BC}
+\implies \frac{4}{10} = \frac{DE}{15}.
+\]
+\[
+DE = \frac{4 \times 15}{10} = \frac{60}{10} = 6\text{ cm}.
+\]
+
+\textbf{2.} On a
+\[
+\frac{AM}{AB} = \frac{AN}{AC}
+\implies \frac{5}{8} = \frac{3}{AC}.
+\]
+\[
+AC = \frac{8 \times 3}{5} = \frac{24}{5} = 4{,}8\text{ cm}.
+\]
+Puisque $NC = AC - AN = 4{,}8 - 3 = 1{,}8\text{ cm}$.
+
+\subsection*{Série B}
+
+\textbf{3.} a) Les rapports du papillon sont :
+\[
+\frac{OA}{OC} = \frac{OB}{OD} = \frac{AB}{CD}.
+\]
+b)
+\[
+\frac{3}{OC} = \frac{4}{6}
+\implies 4 \times OC = 18
+\implies OC = 4{,}5\text{ cm}.
+\]
+Pour $AB$ :
+\[
+\frac{4}{6} = \frac{AB}{7}
+\implies AB = \frac{28}{6} = \frac{14}{3}
+\approx 4{,}67\text{ cm}.
+\]
+
+\textbf{4.} On calcule les deux rapports :
+\[
+\frac{AM}{AB} = \frac{3}{7} \approx 0{,}4286.
+\]
+De l'autre côté :
+\[
+\frac{AN}{AC} = \frac{4}{28/3}
+= 4 \times \frac{3}{28}
+= \frac{12}{28}
+= \frac{3}{7}.
+\]
+Les rapports sont égaux ($3/7$), donc d'après la réciproque de Thalès, les droites $(MN)$ et $(BC)$ sont bien \textbf{parallèles}.
+
+\subsection*{Défi bonus}
+
+On se trouve dans une configuration de Thalès (triangles semblables formés par l'arbre et le bâton avec les rayons du soleil).
+La distance totale du pied de l'arbre au bout de son ombre est $8 + 2 = 10\text{ m}$.
+Soit $H$ la hauteur de l'arbre :
+\[
+\frac{\text{Hauteur bâton}}{\text{Hauteur arbre}}
+= \frac{\text{Ombre bâton}}{\text{Ombre totale}}
+\quad\Longrightarrow\quad
+\frac{1{,}5}{H} = \frac{2}{10}.
+\]
+Produit en croix :
+\[
+2 \times H = 1{,}5 \times 10 = 15
+\implies H = \frac{15}{2} = 7{,}5\text{ mètres}.
+\]
+L'arbre mesure donc $7{,}5\text{ m}$ de haut.
+
+\end{document}

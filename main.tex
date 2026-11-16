@@ -1,0 +1,85 @@
+% =========================================================
+% DOCUMENT PRINCIPAL — SUPPORTS DE MATHEMATIQUES
+% =========================================================
+% Compiler ce fichier pour obtenir le recueil complet.
+%
+% Les chapitres sont importés par leur NOM : tu peux les
+% réordonner librement en changeant l'ordre des \subfile.
+%
+% Pour compiler un chapitre seul, ouvrir le fichier .tex
+% correspondant dans le dossier chapitres/ et le compiler.
+% Chaque chapitre utilisera le préambule de ce document.
+% =========================================================
+
+\documentclass[11pt,a4paper,oneside]{book}
+
+% Le package subfiles permet de compiler chaque chapitre
+% individuellement ou de l'inclure dans le livre complet.
+\usepackage{subfiles}
+
+% Préambule commun à tout le projet
+\input{preambule.tex}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% Page de garde du livre
+% ---------------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{2.5cm}
+  {\Huge\bfseries Supports de mathématiques\par}
+  \vspace{0.7cm}
+  {\Large Synthèses de cours, méthodes et exercices\par}
+  \vfill
+  {\LARGE\bfseries Recueil complet\par}
+  \vspace{0.5cm}
+  {\large Tous les chapitres réunis dans un seul ouvrage\par}
+  \vfill
+  {\large Gauthier Baudelet\par}
+  \vspace{0.4cm}
+  {\large 3e secondaire\par}
+  \vspace{1.5cm}
+  \MentionLegale
+  \vspace{0.5cm}
+\end{titlepage}
+
+\frontmatter
+\tableofcontents
+\mainmatter
+
+% =========================================================
+% CHAPITRES
+% =========================================================
+% Ajoute ici une ligne par chapitre.
+% Le nom doit correspondre exactement au nom du fichier,
+% sans l'extension .tex.
+%
+% Exemple :
+% \subfile{chapitres/equations_et_inequations}
+%
+% Les fichiers seront ajoutés au fur et à mesure de leur
+% adaptation. Les tests \IfFileExists évitent une erreur
+% tant qu'un chapitre n'a pas encore été fourni.
+
+\IfFileExists{chapitres/equations_et_inequations.tex}
+  {\subfile{chapitres/equations_et_inequations}}
+  {\typeout{Chapitre absent : equations_et_inequations.tex}}
+
+\IfFileExists{chapitres/fonctions_et_graphiques.tex}
+  {\subfile{chapitres/fonctions_et_graphiques}}
+  {\typeout{Chapitre absent : fonctions_et_graphiques.tex}}
+
+\IfFileExists{chapitres/exposants_et_racines.tex}
+  {\subfile{chapitres/exposants_et_racines}}
+  {\typeout{Chapitre absent : exposants_et_racines.tex}}
+
+\IfFileExists{chapitres/thales_et_geometrie.tex}
+  {\subfile{chapitres/thales_et_geometrie}}
+  {\typeout{Chapitre absent : thales_et_geometrie.tex}}
+
+\IfFileExists{chapitres/trigonometrie.tex}
+  {\subfile{chapitres/trigonometrie}}
+  {\typeout{Chapitre absent : trigonometrie.tex}}
+
+\end{document}
