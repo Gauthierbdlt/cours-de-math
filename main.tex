@@ -74,12 +74,16 @@
   {\subfile{chapitres/exposants_et_racines}}
   {\typeout{Chapitre absent : exposants_et_racines.tex}}
 
-\IfFileExists{chapitres/thales_et_geometrie.tex}
-  {\subfile{chapitres/thales_et_geometrie}}
-  {\typeout{Chapitre absent : thales_et_geometrie.tex}}
+\IfFileExists{chapitres/produits_remarquables.tex}
+  {\subfile{chapitres/produits_remarquables}}
+  {\typeout{Chapitre absent : produits_remarquables.tex}}
 
 \IfFileExists{chapitres/trigonometrie.tex}
   {\subfile{chapitres/trigonometrie}}
   {\typeout{Chapitre absent : trigonometrie.tex}}
+
+\IfFileExists{chapitres/thales_et_geometrie_metrique.tex}
+  {\subfile{chapitres/thales_et_geometrie_metrique}}
+  {\typeout{Chapitre absent : thales_et_geometrie_metrique.tex}}
 
 \end{document}
